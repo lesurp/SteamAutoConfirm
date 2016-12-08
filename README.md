@@ -13,6 +13,7 @@ Then simply run:
 	python steam_auto_confirm.py /path/to/your/emails
 ````
 
+## Improvments
 It is possible do that with IMAP, but I am using a gmail account and this OAuth
 just for that is annoying. With any email provider that allows a painless IMAP,
 one can use imaplib to get the emails.
