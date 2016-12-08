@@ -25,10 +25,16 @@ with open(EMAILS_FILENAME, 'r') as emails_file:
     emails_string = emails_file.read().replace('\n', '')
     compiled_re = re.compile(CONFIRMATION_LINK_REGEX)
     urls = compiled_re.findall(emails_string)
-    print('Found ' + str(len(urls)) + ' confirmation urls')
+    number_urls = len(urls)
     counter = 1
+    print('Found ' + str(number_urls) + ' confirmation urls')
 
     for url in urls:
         requests.get(url.replace('&amp;', '&'))
-        print('Processed url #' + str(counter++) + ', now sleeping')
-        time.sleep(DELAY_OFFSET + random.random()*2)
+
+        if counter == number_urls:
+            print('Processed all ' + str(number_urls) + ' urls')
+        else:
+            print('Processed url #' + str(counter) + ', now sleeping')
+            counter += 1
+            time.sleep(DELAY_OFFSET + random.random()*2)
