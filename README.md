@@ -13,6 +13,11 @@ Then simply run:
 	python steam_auto_confirm.py /path/to/your/emails
 ````
 
+Note: you can download the Gmail page itself, but it takes longer.
+Note 2: if you sell the same item multiples times, Gmail will "hide" the
+duplicates even when you print them. Downloading the Gmail page directly fixes
+this.
+
 ## Improvments
 It is possible do that with IMAP, but I am using a gmail account and this OAuth
 just for that is annoying. With any email provider that allows a painless IMAP,
